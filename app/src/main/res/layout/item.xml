@@ -22,7 +22,7 @@
                 android:src="@drawable/person"
                 android:layout_marginRight="10dp"/>
             <TextView
-                android:id="@+id/tv_1"
+                android:id="@+id/tv_email_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/str_1"
@@ -30,13 +30,13 @@
                 android:textStyle="bold"
                 android:layout_toRightOf="@id/img_person"/>
             <TextView
-                android:id="@+id/tv_2"
+                android:id="@+id/tv_body"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/str_2"
                 android:textSize="12sp"
-                android:layout_below="@id/tv_1"
-                android:layout_alignLeft="@id/tv_1"/>
+                android:layout_below="@id/tv_email_1"
+                android:layout_alignLeft="@id/tv_body"/>
         </RelativeLayout>
 
     </RelativeLayout>
