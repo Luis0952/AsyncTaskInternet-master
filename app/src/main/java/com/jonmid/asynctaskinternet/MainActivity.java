@@ -26,6 +26,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+
+//    Parser --> json es el Poujo
     ProgressBar progressBar;
     Button button;
     RecyclerView recyclerView;
