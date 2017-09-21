@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jonmid.asynctaskinternet.Adapter.CommentAdapter;
 import com.jonmid.asynctaskinternet.Models.Comment;
 import com.jonmid.asynctaskinternet.Parser.Json;
 
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar progressBar;
     Button button;
     RecyclerView recyclerView;
+    CommentAdapter commentAdapter;
+
 //    en la variable commentList se almacena todos los 500 registros
     List <Comment> commentList;
     @Override
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.id_pb_1);
         button = (Button) findViewById(R.id.id_btn_1);
         recyclerView=(RecyclerView) findViewById(R.id.id_rv_item);
+
     }
 
     // Metodo para validar la conexion a internet
@@ -65,10 +69,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void processData(String s){
+    public void processData(){
         // textView.setText("item: "+s);
         // textView.setTextSize(Integer.parseInt(s));
-
+        commentAdapter=new CommentAdapter(commentList, getApplicationContext());
+//        Tiene toda la configuracion
+        recyclerView.setAdapter(commentAdapter);
 
     }
 
@@ -104,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onProgressUpdate(String... values) {
             super.onProgressUpdate(values);
-            processData(values[0]);
+            processData();
         }
 
         @Override
@@ -118,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             progressBar.setVisibility(View.GONE);
-            processData(s);
+            processData();
         }
     }
 }

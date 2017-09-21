@@ -51,8 +51,14 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-//  encargado de trabajar los componentes del Item
+//  encargado de trabajar los componentes del Item.xml
+    holder.textViewEmail.setText(commentList.get(position).getEmail());
+    holder.textViewBody.setText(commentList.get(position).getBody());
 
+    }
+
+    public int getItemCount(){
+        return commentList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
